@@ -24,7 +24,7 @@ func buildBinary(t *testing.T) string {
 
 func TestInfoCommand(t *testing.T) {
 	bin := buildBinary(t)
-	cmd := exec.Command(bin, "info")
+	cmd := exec.Command(bin, "info", "-o", "json")
 	out, err := cmd.Output()
 	require.NoError(t, err)
 
